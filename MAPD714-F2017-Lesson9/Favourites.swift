@@ -31,4 +31,13 @@ class FavouritesList{
             saveFavourites()
         }
     }
+    
+    func moveItem(fromIndex from: Int, toIndex to: Int){
+        let item = favourites[from]
+        favourites.remove(at: from)
+        favourites.insert(item, at: to)
+        saveFavourites()
+    }
+    
+    
 }
