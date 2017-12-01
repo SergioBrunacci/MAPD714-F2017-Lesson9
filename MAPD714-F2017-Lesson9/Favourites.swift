@@ -1,5 +1,12 @@
-import Foundation
+//
+//  Favourites.swift
+//  MAPD714-F2017-Lesson9
+//
+//  Created by Sergio de Almeida Brunacci and Rafael Timbo Matos on 2017-11-29.
+//  Copyright © 2017 Centennial College. All rights reserved.
+//
 
+import Foundation
 import UIKit
 
 class FavouritesList{
@@ -38,6 +45,5 @@ class FavouritesList{
         favourites.insert(item, at: to)
         saveFavourites()
     }
-    
     
 }

@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  MAPD714-F2017-Lesson9
 //
-//  Created by Sergio de Almeida Brunacci on 2017-11-29.
+//  Created by Sergio de Almeida Brunacci and Rafael Timbo Matos on 2017-11-29.
 //  Copyright © 2017 Centennial College. All rights reserved.
 //
 

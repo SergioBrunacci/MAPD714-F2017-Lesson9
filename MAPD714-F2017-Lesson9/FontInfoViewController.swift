@@ -2,7 +2,7 @@
 //  FontInfoViewController.swift
 //  MAPD714-F2017-Lesson9
 //
-//  Created by Sergio de Almeida Brunacci on 2017-11-29.
+//  Created by Sergio de Almeida Brunacci and Rafael Timbo Matos on 2017-11-29.
 //  Copyright © 2017 Centennial College. All rights reserved.
 //
 
@@ -22,7 +22,7 @@ class FontInfoViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         fontSampleLabel.font = font
-        fontSampleLabel.text = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVv" + "WwXxYyZz 0123456789"
+        fontSampleLabel.text = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz 0123456789"
         fontSizeSlider.value = Float(font.pointSize)
         fontSizeLabel.text = "\(Int(font.pointSize))"
         favouriteSwitch.isOn = favourite

@@ -1,3 +1,11 @@
+//
+//  FontListViewController.swift
+//  MAPD714-F2017-Lesson9
+//
+//  Created by Sergio de Almeida Brunacci and Rafael Timbo Matos on 2017-11-29.
+//  Copyright © 2017 Centennial College. All rights reserved.
+//
+
 import UIKit
 
 class FontListViewController: UITableViewController {
@@ -14,9 +22,10 @@ class FontListViewController: UITableViewController {
         cellPointSize = preferredTableViewFont.pointSize
         tableView.estimatedRowHeight = cellPointSize
         
+        /*
         if showsFavourites{
             navigationItem.rightBarButtonItem = editButtonItem
-        }
+        }*/
         
         
     }
@@ -47,7 +56,46 @@ class FontListViewController: UITableViewController {
         
         return cell
     }
+    //For test purpose
+    /*
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using [segue destinationViewController].
+        // Pass the selected object to the new view controller.
+        let tableViewCell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: tableViewCell)!
+        let font = fontForDisplay(atIndexPath: indexPath as NSIndexPath)
+        let sizesVC =  segue.destination as! FontSizesViewController
+        sizesVC.title = font.fontName
+        sizesVC.font = font
+    }
     
+    
+    
+    */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let tableViewCell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: tableViewCell)!
+        let font = fontForDisplay(atIndexPath: indexPath as NSIndexPath)
+        
+        if segue.identifier == "ShowFontSizes" {
+            let sizesVC =  segue.destination as! FontSizesViewController
+            sizesVC.title = font.fontName
+            sizesVC.font = font
+
+        } else {
+            let infoVC = segue.destination as! FontInfoViewController
+            infoVC.title = font.fontName
+            infoVC.font = font
+            infoVC.favourite = FavouritesList.sharedFavouritesList.favourites.contains(font.fontName)
+        }
+        
+    }
+
+    
+    
+    
+    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         //Get the new view controller using [segue destinationViewController].Any?
         //Pass the selected object to the new view controller.Any
@@ -55,14 +103,14 @@ class FontListViewController: UITableViewController {
         let indexPath = tableView.indexPath(for: tableViewCell)!
         let font = fontForDisplay(atIndexPath: indexPath as NSIndexPath)
         
-        /*
+        
         
         let sizesVC = segue.destination as! FontSizesViewController
         sizesVC.title = font.fontName
         sizesVC.font = font
-        */
+ 
         
-        if segue.identifier == "FontNameAndSize" {
+        if segue.identifier == "ShowFontSizes" {
             let sizesVC = segue.destination as! FontSizesViewController
             sizesVC.title = font.fontName
             sizesVC.font = font
@@ -78,7 +126,7 @@ class FontListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         FavouritesList.sharedFavouritesList.moveItem(fromIndex: sourceIndexPath.row, toIndex: destinationIndexPath.row)
         fontNames = FavouritesList.sharedFavouritesList.favourites;
-    }
+    } */
   
     
 }
